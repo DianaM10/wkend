@@ -1,3 +1,5 @@
+require ('pry-byebug')
+
 def pet_shop_name(pet_shop)
   return pet_shop[:name]
 end
@@ -33,13 +35,14 @@ def pets_by_breed(pet_shop, breed)
 end
 
 def find_pet_by_name(pet_shop, name)
-  # matching_name = []
-  for name in pet_shop[:pets]
-    if (name[:name] == name)
-      # matching_name.push(name)
-    # else puts nil
+  matching_name = Hash.new
+  for pet in pet_shop[:pets]
+    if (pet[:name] == name)
+      matching_name[:name] = name
+      return matching_name
+    else pet = nil
     end
-  end  
-  return name
+  end 
+  return pet
 end
 
