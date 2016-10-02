@@ -50,5 +50,10 @@ def remove_pet_by_name(pet_shop, name)
   for pet in pet_shop[:pets]
     pet_shop[:pets].delete_if { |pet| pet[:name] == name}
   end
-  puts pet_shop
 end
+
+def add_pet_to_stock(pet_shop, new_pet)
+  pet_shop[:pets] << new_pet
+  return pet_shop[:pets].length
+end
+
